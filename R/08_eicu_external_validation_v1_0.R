@@ -1,7 +1,7 @@
 ## =============================================================================
 ## 08_eicu_external_validation_v1_0.R
-## Step 5b — eICU external validation of the MIMIC-IV sepsis-ARDS ventilatory
-##           mechanics -> mortality prediction model.
+## eICU-CRD external validation of the MIMIC-IV sepsis-ARDS ventilatory
+## mechanics -> mortality prediction model.
 ##
 ## PURPOSE
 ##   Apply the frozen MIMIC-IV primary logistic model (models_step5.rds$primary)
@@ -9,16 +9,15 @@
 ##   and report EXTERNAL discrimination (C), calibration (intercept/slope, Brier)
 ##   and recalibration-in-the-large, plus a sensitivity matrix.
 ##
-## KEY METHODOLOGICAL DECISIONS (inherited from Step 5 handoff v4, discipline 1-5)
+## KEY METHODOLOGICAL DECISIONS
 ##   1. Primary model is LOGISTIC (Cox PH violated for MP/dP/PF in MIMIC; time
 ##      columns unreliable). External validation therefore also logistic.
-##   2. Exposure = Day-1 BASELINE mechanics only (NO slope/peak/AUC — immortal
-##      time bias, discipline 3).
+##   2. Exposure = Day-1 BASELINE mechanics only (NO slope/peak/AUC — avoids
+##      immortal-time bias).
 ##   3. MP / dP computed with the EXACT MIMIC formulas (see below).
 ##   4. OUTCOME = in-hospital mortality (eICU has no post-discharge follow-up, so
-##      28-day all-cause mortality cannot be reproduced; user-approved substitute,
-##      2026-07-04). This differs from MIMIC's 28-day outcome -> expect
-##      recalibration-in-the-large. Disclosed in Methods + limitations.
+##      28-day all-cause mortality cannot be reproduced). This differs from
+##      MIMIC's 28-day outcome -> expect recalibration-in-the-large.
 ##   5. Only aggregate statistics are exported; NO row-level data leaves secure_data.
 ##
 ## MIMIC EXPOSURE FORMULAS (reproduced verbatim from trajectory_features.rds)
@@ -31,9 +30,9 @@
 ##                         fio2[21,100]
 ##
 ## INPUT
-##   /Users/doctorliu/secure_data/eicu-crd/2.0/*.csv.gz  (read-only)
-##   models_step5.rds  (MIMIC frozen models; artifact 082ec6de-...)
-##   modeling_cohort.rds (MIMIC dev cohort, for distribution comparison)
+##   <eICU-CRD v2.0 directory>/*.csv.gz  (read-only)
+##   models_step5.rds     (frozen MIMIC-IV development models)
+##   modeling_cohort.rds   (MIMIC-IV development cohort, for distribution comparison)
 ##
 ## OUTPUT (aggregate only)
 ##   eicu_funnel.csv, eicu_analysis_master.rds, table_eicu_comparability.csv,
@@ -42,14 +41,13 @@
 ##   fig_eicu_vs_mimic_dist.png, fig_eicu_roc.png, fig_eicu_calibration.png,
 ##   fig_eicu_external_validation.png (composite Figure 3)
 ##
-## ENVIRONMENT  icu-vent (R 4.5.3 + data.table + survival + rms + pROC)
-## AUTHOR  Step 5b, 2026-07-04
+## ENVIRONMENT  R 4.5.3 + data.table + survival + rms + pROC
 ## =============================================================================
 
 suppressPackageStartupMessages({
   library(data.table); library(survival); library(pROC)
 })
-EICU <- "/Users/doctorliu/secure_data/eicu-crd/2.0"
+EICU <- Sys.getenv("EICU_PATH", "/path/to/eicu-crd/2.0")  # set to your local eICU-CRD v2.0 directory
 rd   <- function(f) fread(cmd=paste0("gzcat ", file.path(EICU, f)))
 log_msg <- function(...) cat(format(Sys.time(), "%H:%M:%S"), "|", ..., "\n")
 
@@ -198,7 +196,7 @@ ext_C <- function(obs, pred){ r <- roc(obs, pred, quiet=TRUE, direction="<")
   ci <- ci.auc(r, method="delong"); c(C=as.numeric(auc(r)), lo=ci[1], hi=ci[3],
   n=length(obs), ev=sum(obs)) }
 ## (primary; ICU mortality; P/F backfilled; ARDS severity strata) — see
-## table_eicu_sensitivity.csv for the full matrix produced interactively.
+## table_eicu_sensitivity.csv for the full matrix.
 ## ARDS severity uses EXPLICIT Berlin boundaries with an upper ceiling at 300
 ## (Mild = P/F 200-300, NOT >200), because pf_day1_min is the Day-1 *minimum*
 ## and can exceed 300 for patients admitted to the cohort on an earlier/later
@@ -208,6 +206,6 @@ ext_C <- function(obs, pred){ r <- roc(obs, pred, quiet=TRUE, direction="<")
 ##                         right=TRUE, include.lowest=TRUE)]
 ##   # 132 patients with Day-1-min P/F>300 fall outside the Berlin strata (NA)
 
-## NB: figures (dist/ROC/calibration/composite) are rendered in Python
-##     (matplotlib) from aggregate CSVs, since icu-vent lacks magick/patchwork.
+## NB: figures (dist/ROC/calibration/composite) are rendered separately in
+##     Python (matplotlib) from the aggregate CSVs.
 ## =============================================================================
