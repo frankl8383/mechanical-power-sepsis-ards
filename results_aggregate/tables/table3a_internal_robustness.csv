@@ -1,0 +1,6 @@
+Analysis,N,Events,Mechanical power (per 1 SD),Driving pressure (per 1 SD),P value
+"Primary (28-day, complete-case)","19,394","4,032",1.42 (1.37–1.47),1.13 (1.09–1.17),<0.001
+In-hospital mortality,"19,394","3,780",1.49 (1.43–1.54),1.15 (1.11–1.19),<0.001
+"Cox model, 28-day (HR)","19,394","4,032",1.37 (1.33–1.41)†,1.12 (1.09–1.16)†,<0.001
+"Multiple imputation (m=20, full cohort)","23,807","4,894",1.41 (1.36–1.46),1.11 (1.07–1.15),<0.001
+MP trajectory slope (exploratory)†,"9,363","3,079",1.57 (1.49–1.65),1.12 (1.06–1.19),<0.001

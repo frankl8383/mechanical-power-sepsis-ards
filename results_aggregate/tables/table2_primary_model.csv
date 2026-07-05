@@ -1,0 +1,6 @@
+Predictor,Per-unit OR (95% CI),Unit,Per-SD OR (95% CI),1 SD,P value
+Mechanical power,1.053 (1.047–1.059),1 J/min,1.42 (1.37–1.47),6.79 J/min,<0.001
+Driving pressure,1.035 (1.025–1.046),1 cmH₂O,1.13 (1.09–1.17),3.54 cmH₂O,<0.001
+Age,1.023 (1.020–1.025),1 year,1.40 (1.34–1.45),15.0 years,<0.001
+Male sex (vs female),0.720 (0.668–0.776),—,0.72 (0.67–0.78),—,<0.001
+Day-1 PaO₂/FiO₂,0.997 (0.996–0.997),1 mmHg,0.75 (0.72–0.78),93.5 mmHg,<0.001

@@ -1,0 +1,10 @@
+Analysis,Value,Detail
+External nested: base (age+sex+P/F),C=0.633,
+  + non-respiratory SOFA,C=0.701,
+  + driving pressure,C=0.719,
+  + mechanical power,C=0.721,
+MP increment over base+SOFA+ΔP (eICU),MP OR 1.20 (1.07-1.35),"ΔC +0.0024, LR χ²=10.3 p=0.00134"
+,,
+APACHE IVa alone,C=0.721,"N=1656, deployed commercial score"
+  + mechanical power,C=0.725,MP OR 1.20 p=0.000853 (LR χ²=11.2)
+MP increment over APACHE IVa,ΔC +0.0038 (p=0.20),significant OR/LR; ΔC modest & NS
