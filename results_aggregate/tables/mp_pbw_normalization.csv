@@ -1,0 +1,5 @@
+cohort,model,N,MP_OR_perSD,male_OR,VTPBW_OR
+MIMIC (28-day),+MP (no body-size),19394,1.313,0.693,
+MIMIC (28-day),+MP +VT/PBW,19394,1.353,0.583,0.766
+eICU (in-hosp),+MP (no body-size),1829,1.203,0.814,
+eICU (in-hosp),+MP +VT/PBW,1829,1.218,0.747,0.886
