@@ -14,6 +14,9 @@
 #   severity-adjusted MP association.
 #
 # Inputs (derived cohort objects; not redistributed)
+#   cohort_ids.rds            (full MIMIC cohort 23,807: stay_id, anchor_age,
+#                              los_h, gender)
+#   modeling_cohort.rds       (MIMIC complete-case set 19,394; membership flag)
 #   eicu_analysis_master.rds  (MP_baseline, dP_baseline, pf_day1_min, has_primary,
 #                              has_mp, died_hosp, anchor_age, gender, ...)
 #   sofa_eicu.rds             (sofa_nonresp, apache_iva, apache_pred_hosp)
@@ -42,22 +45,49 @@ em <- merge(em, sofa_e[, .(stay_id, sofa_nonresp, apache_iva, apache_pred_hosp)]
 em[, complete := has_primary == TRUE]
 em[, male := as.integer(gender == "M")]
 
-## ---- (a) SMD: complete vs incomplete ---------------------------------------
+## ---- (a) SMD: modeled (complete-case) vs excluded ---------------------------
+# Compared in BOTH databases: MIMIC-IV (full 23,807 vs the 19,394 modeled) and
+# eICU-CRD (full 7,959 vs the plateau-recorded complete cases). Standardized mean
+# difference uses the pooled SD of the two groups.
 smd <- function(x, g){
-  m1 <- mean(x[g], na.rm=TRUE); m0 <- mean(x[!g], na.rm=TRUE)
-  s1 <- var(x[g], na.rm=TRUE);  s0 <- var(x[!g], na.rm=TRUE)
-  (m1 - m0) / sqrt((s1 + s0)/2)
+  x1 <- x[g]; x0 <- x[!g]
+  s <- sqrt((var(x1, na.rm=TRUE) + var(x0, na.rm=TRUE)) / 2)
+  if(is.na(s) || s == 0) return(NA_real_)
+  (mean(x1, na.rm=TRUE) - mean(x0, na.rm=TRUE)) / s
 }
-vars <- c("anchor_age","sofa_nonresp","apache_iva","apache_pred_hosp",
-          "pf_day1_min","died_hosp")
-g <- em$complete
-base_tab <- rbindlist(lapply(vars, function(v){
-  x <- em[[v]]
-  data.table(variable = v,
-             complete_mean   = round(mean(x[g],  na.rm=TRUE), 3),
-             incomplete_mean = round(mean(x[!g], na.rm=TRUE), 3),
+smd_row <- function(cohort, label, x, g){
+  data.table(cohort = cohort, variable = label,
+             modeled_mean  = round(mean(x[g],  na.rm=TRUE), 2),
+             modeled_sd    = round(sd(x[g],    na.rm=TRUE), 2),
+             excluded_mean = round(mean(x[!g], na.rm=TRUE), 2),
+             excluded_sd   = round(sd(x[!g],   na.rm=TRUE), 2),
              SMD = round(smd(x, g), 3))
-}))
+}
+
+# MIMIC arm: full cohort (cohort_ids.rds) flagged by membership in the modeled set
+ci <- readRDS(file.path(DERIVED, "cohort_ids.rds")); setDT(ci)
+mc <- readRDS(file.path(DERIVED, "modeling_cohort.rds")); setDT(mc)
+ci[, in_model := stay_id %in% mc$stay_id]
+ci[, age_num := as.numeric(anchor_age)]
+ci[, los_num := as.numeric(los_h)]
+ci[, male    := as.integer(gender == "M")]
+gm <- ci$in_model
+tab_m <- rbind(
+  smd_row("MIMIC (full 23,807)", "Age, years",     ci$age_num, gm),
+  smd_row("MIMIC (full 23,807)", "ICU LOS, hours",  ci$los_num, gm),
+  smd_row("MIMIC (full 23,807)", "Male, %",         ci$male,    gm))
+
+# eICU arm: full analytic cohort flagged by complete (plateau-recorded) status
+ge <- em$complete
+tab_e <- rbind(
+  smd_row("eICU (full 7,959)", "Age, years",              em$anchor_age,       ge),
+  smd_row("eICU (full 7,959)", "Non-resp SOFA",           em$sofa_nonresp,     ge),
+  smd_row("eICU (full 7,959)", "APACHE IVa",              em$apache_iva,       ge),
+  smd_row("eICU (full 7,959)", "APACHE pred. mortality",  em$apache_pred_hosp, ge),
+  smd_row("eICU (full 7,959)", "P/F ratio",               em$pf_day1_min,      ge),
+  smd_row("eICU (full 7,959)", "In-hospital death",       em$died_hosp,        ge))
+
+base_tab <- rbind(tab_m, tab_e)
 fwrite(base_tab, file.path(OUT, "completecase_vs_incomplete_baseline.csv"))
 print(base_tab)
 
