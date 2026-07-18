@@ -1,0 +1,13 @@
+block,item,sample or estimand,Delta Brier,Delta log loss,Delta C statistic,direction reversal
+Support,Primary external analysis cohort,"1,211 patients; 348 deaths; 34 hospitals; largest hospital, 49.22%",,,,
+Support,Largest-hospital exclusion,615 patients; 152 deaths; 33 hospitals; 596 patients and 196 deaths excluded,,,,
+Support,Equal-hospital weighting,"1,136 patients; 334 deaths; 15 hospitals; equal total weight per hospital",,,,
+Largest-hospital exclusion,M_4DPRR versus M_MP,Point estimate,0.00245,0.00702,-0.0051,
+Equal-hospital weighting,M_4DPRR versus M_MP,Point estimate,0.0017,0.0037,0.00116,
+Largest-hospital exclusion,M_DPRR versus M_MP,Point estimate,0.00095,0.00409,-0.0024,
+Equal-hospital weighting,M_DPRR versus M_MP,Point estimate,0.00428,0.01415,-0.01412,
+Largest-hospital exclusion,M_ENERGY versus M_MP,Point estimate,0.00131,0.00343,-0.0021,
+Equal-hospital weighting,M_ENERGY versus M_MP,Point estimate,0.00185,0.00444,0.00016,
+Leave one hospital out,M_4DPRR versus M_MP,34 estimable omissions,-0.00274 to 0.00245,-0.00646 to 0.00702,-0.0051 to 0.00871,Yes
+Leave one hospital out,M_DPRR versus M_MP,34 estimable omissions,-0.00022 to 0.00095,-0.00046 to 0.00409,-0.0024 to 0.00875,Yes
+Leave one hospital out,M_ENERGY versus M_MP,34 estimable omissions,-0.00063 to 0.00131,-0.00151 to 0.00343,-0.0021 to 0.003,Yes

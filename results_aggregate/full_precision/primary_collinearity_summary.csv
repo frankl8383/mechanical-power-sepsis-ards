@@ -1,0 +1,3 @@
+"audit_id","n","predictors","condition_number","maximum_absolute_pairwise_correlation","maximum_vif","condition_number_warning","vif_warning"
+"M_DPRR_increment",9861,2,1.12183410556491,0.114461108832946,1.0132752693244,FALSE,FALSE
+"M_ENERGY_increment",9861,3,1.76295629306422,0.421622698560608,1.32826005772745,FALSE,FALSE

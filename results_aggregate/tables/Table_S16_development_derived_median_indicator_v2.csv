@@ -1,0 +1,14 @@
+section,database,item,sample,imputation value,Brier score,Log loss,C-statistic,Delta Brier,Delta log loss,Delta C statistic,detail
+Imputation parameters,MIMIC-IV,MAP,"Derived from 10,468 patients",59,,,,,,,Missing in 156 MIMIC-IV and 10 eICU-CRD patients
+Imputation parameters,MIMIC-IV,Platelet count,"Derived from 10,468 patients",159,,,,,,,Missing in 381 MIMIC-IV and 212 eICU-CRD patients
+Imputation parameters,MIMIC-IV,Creatinine,"Derived from 10,468 patients",1.1,,,,,,,Missing in 330 MIMIC-IV and 176 eICU-CRD patients
+Sample flow,MIMIC-IV,All patients with a valid tuple,"10,468 patients; 2,662 deaths; 1 hospital",,,,,,,,"607 patients required at least one imputation; 9,861 had complete baseline data"
+Sample flow,eICU-CRD,All patients with a valid tuple,"1,459 patients; 399 deaths; 36 hospitals",,,,,,,,"248 patients required at least one imputation; 1,211 had complete baseline data"
+External performance,eICU-CRD,Baseline,"1,459 patients; 399 deaths",,0.1796,0.5402,0.701,,,,
+External performance,eICU-CRD,sMP,"1,459 patients; 399 deaths",,0.1779,0.5368,0.707,,,,
+External performance,eICU-CRD,4 × ΔP + RR,"1,459 patients; 399 deaths",,0.1774,0.5355,0.71,,,,
+External performance,eICU-CRD,Separate ΔP and RR,"1,459 patients; 399 deaths",,0.1777,0.5361,0.713,,,,
+External performance,eICU-CRD,Algebraic terms,"1,459 patients; 399 deaths",,0.178,0.537,0.707,,,,
+External paired differences,eICU-CRD,4 × ΔP + RR versus sMP,Same all-tuple cohort,,,,,-0.0005,-0.00128,0.00257,
+External paired differences,eICU-CRD,Separate ΔP and RR versus sMP,Same all-tuple cohort,,,,,-0.0002,-0.00062,0.00626,
+External paired differences,eICU-CRD,Algebraic terms versus sMP,Same all-tuple cohort,,,,,0.000085,0.00022,-0.00022,

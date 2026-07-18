@@ -1,0 +1,111 @@
+"database","analysis","model_id","model_role","weighting","metric","estimate"
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M0","no-GCS baseline","development_derived_joint_ipw","n",9861
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M0","no-GCS baseline","development_derived_joint_ipw","events",2485
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M0","no-GCS baseline","development_derived_joint_ipw","effective_sample_size",9522.83028183658
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M0","no-GCS baseline","development_derived_joint_ipw","weighted_event_rate",0.239559363825994
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M0","no-GCS baseline","development_derived_joint_ipw","brier",0.159246055981764
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M0","no-GCS baseline","development_derived_joint_ipw","log_loss",0.491588955949276
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M0","no-GCS baseline","development_derived_joint_ipw","c_statistic",0.722766229613853
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M0","no-GCS baseline","development_derived_joint_ipw","calibration_in_the_large",2.39465994008088e-10
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M0","no-GCS baseline","development_derived_joint_ipw","calibration_intercept",6.85944197609819e-11
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M0","no-GCS baseline","development_derived_joint_ipw","calibration_slope",1.00000000016273
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M0","no-GCS baseline","development_derived_joint_ipw","observed_expected_ratio",0.999999999935167
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_MP","linear sMP","development_derived_joint_ipw","n",9861
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_MP","linear sMP","development_derived_joint_ipw","events",2485
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_MP","linear sMP","development_derived_joint_ipw","effective_sample_size",9522.83028183658
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_MP","linear sMP","development_derived_joint_ipw","weighted_event_rate",0.239559363825994
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_MP","linear sMP","development_derived_joint_ipw","brier",0.15632566601812
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_MP","linear sMP","development_derived_joint_ipw","log_loss",0.484520228012022
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_MP","linear sMP","development_derived_joint_ipw","c_statistic",0.73308771182499
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_MP","linear sMP","development_derived_joint_ipw","calibration_in_the_large",1.84918609791798e-10
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_MP","linear sMP","development_derived_joint_ipw","calibration_intercept",1.89226496305906e-10
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_MP","linear sMP","development_derived_joint_ipw","calibration_slope",1.00000000047502
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_MP","linear sMP","development_derived_joint_ipw","observed_expected_ratio",0.999999999809568
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","n",9861
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","events",2485
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","effective_sample_size",9522.83028183658
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","weighted_event_rate",0.239559363825994
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","brier",0.15648235830697
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","log_loss",0.485142562753941
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","c_statistic",0.731980138167041
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","calibration_in_the_large",8.18275912640859e-11
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","calibration_intercept",2.76269727982257e-10
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","calibration_slope",1.00000000067017
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","observed_expected_ratio",0.999999999738054
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","n",9861
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","events",2485
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","effective_sample_size",9522.83028183658
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","weighted_event_rate",0.239559363825994
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","brier",0.151409471201703
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","log_loss",0.470706536574819
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","c_statistic",0.755405794700591
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","calibration_in_the_large",-1.55846211511189e-09
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","calibration_intercept",1.4797539081237e-09
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","calibration_slope",1.00000000399287
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","observed_expected_ratio",0.999999998436646
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","n",9861
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","events",2485
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","effective_sample_size",9522.83028183658
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","weighted_event_rate",0.239559363825994
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","brier",0.1558674649468
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","log_loss",0.48359612867725
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","c_statistic",0.734227415351154
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","calibration_in_the_large",1.47981365453256e-10
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","calibration_intercept",2.2803125217554e-10
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","calibration_slope",1.00000000057315
+"MIMIC-IV","joint_always_observed_ipw_weighted_fit","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","observed_expected_ratio",0.999999999770991
+"eICU-CRD","joint_always_observed_ipw_external","M0","no-GCS baseline","development_derived_joint_ipw","n",1211
+"eICU-CRD","joint_always_observed_ipw_external","M0","no-GCS baseline","development_derived_joint_ipw","events",348
+"eICU-CRD","joint_always_observed_ipw_external","M0","no-GCS baseline","development_derived_joint_ipw","effective_sample_size",1143.5899559067
+"eICU-CRD","joint_always_observed_ipw_external","M0","no-GCS baseline","development_derived_joint_ipw","weighted_event_rate",0.274007549317082
+"eICU-CRD","joint_always_observed_ipw_external","M0","no-GCS baseline","development_derived_joint_ipw","brier",0.180163351898072
+"eICU-CRD","joint_always_observed_ipw_external","M0","no-GCS baseline","development_derived_joint_ipw","log_loss",0.541408436248113
+"eICU-CRD","joint_always_observed_ipw_external","M0","no-GCS baseline","development_derived_joint_ipw","c_statistic",0.703122986362528
+"eICU-CRD","joint_always_observed_ipw_external","M0","no-GCS baseline","development_derived_joint_ipw","calibration_in_the_large",0.113557220208929
+"eICU-CRD","joint_always_observed_ipw_external","M0","no-GCS baseline","development_derived_joint_ipw","calibration_intercept",-0.0547349825879077
+"eICU-CRD","joint_always_observed_ipw_external","M0","no-GCS baseline","development_derived_joint_ipw","calibration_slope",0.827955007055272
+"eICU-CRD","joint_always_observed_ipw_external","M0","no-GCS baseline","development_derived_joint_ipw","observed_expected_ratio",1.07518478175667
+"eICU-CRD","joint_always_observed_ipw_external","M_MP","linear sMP","development_derived_joint_ipw","n",1211
+"eICU-CRD","joint_always_observed_ipw_external","M_MP","linear sMP","development_derived_joint_ipw","events",348
+"eICU-CRD","joint_always_observed_ipw_external","M_MP","linear sMP","development_derived_joint_ipw","effective_sample_size",1143.5899559067
+"eICU-CRD","joint_always_observed_ipw_external","M_MP","linear sMP","development_derived_joint_ipw","weighted_event_rate",0.274007549317082
+"eICU-CRD","joint_always_observed_ipw_external","M_MP","linear sMP","development_derived_joint_ipw","brier",0.177925278625926
+"eICU-CRD","joint_always_observed_ipw_external","M_MP","linear sMP","development_derived_joint_ipw","log_loss",0.536647955731874
+"eICU-CRD","joint_always_observed_ipw_external","M_MP","linear sMP","development_derived_joint_ipw","c_statistic",0.711201107457572
+"eICU-CRD","joint_always_observed_ipw_external","M_MP","linear sMP","development_derived_joint_ipw","calibration_in_the_large",0.145170543229808
+"eICU-CRD","joint_always_observed_ipw_external","M_MP","linear sMP","development_derived_joint_ipw","calibration_intercept",-0.0206096706592815
+"eICU-CRD","joint_always_observed_ipw_external","M_MP","linear sMP","development_derived_joint_ipw","calibration_slope",0.834916326167716
+"eICU-CRD","joint_always_observed_ipw_external","M_MP","linear sMP","development_derived_joint_ipw","observed_expected_ratio",1.09609886594393
+"eICU-CRD","joint_always_observed_ipw_external","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","n",1211
+"eICU-CRD","joint_always_observed_ipw_external","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","events",348
+"eICU-CRD","joint_always_observed_ipw_external","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","effective_sample_size",1143.5899559067
+"eICU-CRD","joint_always_observed_ipw_external","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","weighted_event_rate",0.274007549317082
+"eICU-CRD","joint_always_observed_ipw_external","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","brier",0.176925881924193
+"eICU-CRD","joint_always_observed_ipw_external","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","log_loss",0.534479852543043
+"eICU-CRD","joint_always_observed_ipw_external","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","c_statistic",0.714457751081147
+"eICU-CRD","joint_always_observed_ipw_external","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","calibration_in_the_large",0.0566263155661463
+"eICU-CRD","joint_always_observed_ipw_external","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","calibration_intercept",-0.108688065303884
+"eICU-CRD","joint_always_observed_ipw_external","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","calibration_slope",0.818015538386511
+"eICU-CRD","joint_always_observed_ipw_external","M_4DPRR","linear 4DPRR","development_derived_joint_ipw","observed_expected_ratio",1.03568682086314
+"eICU-CRD","joint_always_observed_ipw_external","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","n",1211
+"eICU-CRD","joint_always_observed_ipw_external","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","events",348
+"eICU-CRD","joint_always_observed_ipw_external","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","effective_sample_size",1143.5899559067
+"eICU-CRD","joint_always_observed_ipw_external","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","weighted_event_rate",0.274007549317082
+"eICU-CRD","joint_always_observed_ipw_external","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","brier",0.178516856421406
+"eICU-CRD","joint_always_observed_ipw_external","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","log_loss",0.538056965922192
+"eICU-CRD","joint_always_observed_ipw_external","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","c_statistic",0.7163956122314
+"eICU-CRD","joint_always_observed_ipw_external","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","calibration_in_the_large",0.239622183639178
+"eICU-CRD","joint_always_observed_ipw_external","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","calibration_intercept",-0.0157072158873084
+"eICU-CRD","joint_always_observed_ipw_external","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","calibration_slope",0.764922223674224
+"eICU-CRD","joint_always_observed_ipw_external","M_DPRR","linear free driving-pressure and respiratory-rate weights","development_derived_joint_ipw","observed_expected_ratio",1.15863464847566
+"eICU-CRD","joint_always_observed_ipw_external","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","n",1211
+"eICU-CRD","joint_always_observed_ipw_external","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","events",348
+"eICU-CRD","joint_always_observed_ipw_external","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","effective_sample_size",1143.5899559067
+"eICU-CRD","joint_always_observed_ipw_external","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","weighted_event_rate",0.274007549317082
+"eICU-CRD","joint_always_observed_ipw_external","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","brier",0.17767415017433
+"eICU-CRD","joint_always_observed_ipw_external","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","log_loss",0.536079168725494
+"eICU-CRD","joint_always_observed_ipw_external","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","c_statistic",0.712679746330692
+"eICU-CRD","joint_always_observed_ipw_external","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","calibration_in_the_large",0.130224769057206
+"eICU-CRD","joint_always_observed_ipw_external","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","calibration_intercept",-0.0462219197720341
+"eICU-CRD","joint_always_observed_ipw_external","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","calibration_slope",0.821486643233311
+"eICU-CRD","joint_always_observed_ipw_external","M_ENERGY","linear free algebraic-term weights","development_derived_joint_ipw","observed_expected_ratio",1.08506525846932

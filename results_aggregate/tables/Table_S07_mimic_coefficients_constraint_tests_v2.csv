@@ -1,0 +1,25 @@
+term or test,M0,M_MP,M_4DPRR,M_DPRR,M_ENERGY,test result
+Intercept,-1.773,-2.694,-3.12,-4.505,-2.823,
+Age spline basis 1,0.476,0.691,0.6,0.841,0.723,
+Age spline basis 2,0.685,0.864,0.784,0.939,0.887,
+Female sex,0.457,0.564,0.364,0.357,0.552,
+P/F ratio spline basis 1,-0.896,-0.464,-0.746,-0.394,-0.442,
+P/F ratio spline basis 2,-0.369,-0.201,-0.303,-0.121,-0.194,
+MAP spline basis 1,-0.503,-0.467,-0.453,-0.433,-0.454,
+MAP spline basis 2,0.029,0.045,0.054,0.064,0.056,
+Vasopressor use,0.066,0.017,0.003,0.024,0.001,
+Platelet spline basis 1,-0.859,-0.949,-0.845,-0.904,-0.927,
+Platelet spline basis 2,0.048,0.005,0.041,-0.008,0.01,
+Creatinine spline basis 1,2.76,2.447,2.574,2.155,2.417,
+Creatinine spline basis 2,1.162,1.043,1.087,0.916,1.028,
+sMP,,0.041,,,,
+4 × ΔP + RR,,,0.019,,,
+Driving pressure,,,,0.035,,
+Respiratory rate,,,,0.103,,
+Static-elastic term,,,,,0.039,
+Dynamic-elastic term,,,,,0.084,
+Resistive term,,,,,0.014,
+Pressure-rate weight constraint: 4 × ΔP + RR versus Separate ΔP and RR,,,,,,χ² = 295.09; df = 1; P < .001
+Equal algebraic-term weights: sMP versus Algebraic terms,,,,,,χ² = 23.48; df = 2; P < .001
+Collinearity summary: Separate ΔP and RR,,,,,,maximum absolute correlation = 0.114; maximum VIF = 1.013; condition number = 1.122
+Collinearity summary: Algebraic terms,,,,,,maximum absolute correlation = 0.422; maximum VIF = 1.328; condition number = 1.763

@@ -1,0 +1,15 @@
+record type,item,specification,parameters,incremental degrees of freedom
+Transformation,Age,"Restricted cubic spline, 3 knots",44; 66; 83,
+Transformation,P/F ratio,"Restricted cubic spline, 3 knots",88.889; 194; 282,
+Transformation,MAP,"Restricted cubic spline, 3 knots",43; 59; 72,
+Transformation,Platelet count,"Restricted cubic spline, 3 knots",69; 158; 308,
+Transformation,Creatinine,"Restricted cubic spline, 3 knots",0.6; 1.1; 3.2,
+Transformation,sMP,"Restricted cubic spline, 4 knots",8.467; 13.406; 18.663; 33.251,
+Transformation,4 × ΔP + RR,"Restricted cubic spline, 4 knots",47; 64; 76; 102,
+Transformation,Driving pressure,"Restricted cubic spline, 4 knots",7; 11; 14; 20,
+Transformation,Respiratory rate,"Restricted cubic spline, 4 knots",14; 18; 22; 30,
+Model,M0,Clinical baseline model,No ventilator representation,0
+Model,M_MP,Formula-based sMP,sMP,1
+Model,M_4DPRR,Fixed pressure-rate index,4 × ΔP + RR,1
+Model,M_DPRR,Separately estimated pressure-rate terms,Driving pressure and respiratory rate,2
+Model,M_ENERGY,Separately estimated algebraic terms,"Static-elastic, dynamic-elastic, and resistive terms",3

@@ -1,0 +1,16 @@
+database,population,variable or construct,denominator,missing or unavailable,percent,missingness type
+MIMIC-IV,Full 6-hour landmark risk set,MAP,20388,248,1.22,Ordinary predictor missingness
+MIMIC-IV,Full 6-hour landmark risk set,Platelet count,20388,695,3.41,Ordinary predictor missingness
+MIMIC-IV,Full 6-hour landmark risk set,Creatinine,20388,621,3.05,Ordinary predictor missingness
+MIMIC-IV,Full 6-hour landmark risk set,Valid complete plateau-anchored tuple,20388,9920,48.66,Structural measurement nonavailability; not component-level ordinary missingness
+eICU-CRD,Full 6-hour landmark risk set,Recognized sex,5509,1,0.02,Ordinary predictor missingness
+eICU-CRD,Full 6-hour landmark risk set,MAP,5509,84,1.52,Ordinary predictor missingness
+eICU-CRD,Full 6-hour landmark risk set,Platelet count,5509,1085,19.7,Ordinary predictor missingness
+eICU-CRD,Full 6-hour landmark risk set,Creatinine,5509,962,17.46,Ordinary predictor missingness
+eICU-CRD,Full 6-hour landmark risk set,Valid complete plateau-anchored tuple,5509,4050,73.52,Structural measurement nonavailability; not component-level ordinary missingness
+MIMIC-IV,Valid-tuple cohort,MAP,10468,156,1.49,Ordinary predictor missingness
+MIMIC-IV,Valid-tuple cohort,Platelet count,10468,381,3.64,Ordinary predictor missingness
+MIMIC-IV,Valid-tuple cohort,Creatinine,10468,330,3.15,Ordinary predictor missingness
+eICU-CRD,Valid-tuple cohort,MAP,1459,10,0.69,Ordinary predictor missingness
+eICU-CRD,Valid-tuple cohort,Platelet count,1459,212,14.53,Ordinary predictor missingness
+eICU-CRD,Valid-tuple cohort,Creatinine,1459,176,12.06,Ordinary predictor missingness

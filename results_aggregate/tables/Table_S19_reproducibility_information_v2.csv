@@ -1,0 +1,9 @@
+item,detail
+Data releases,MIMIC-IV version 3.1; eICU Collaborative Research Database version 2.0
+Analysis design,Fixed 6-hour landmark and five-model hierarchy
+Software,R 4.5.1; data.table 1.17.4; splines 4.5.1; survival 3.8.3
+Random seeds,MIMIC-IV internal validation 2026071601; eICU hospital-cluster bootstrap 2026071602; sensitivity analyses 2026071603
+Resampling,"MIMIC-IV internal validation 1000 repetitions; eICU hospital-cluster bootstrap 2000 repetitions; calibration-slope intervals used 1,000 outer and 200 inner repetitions"
+Follow-up description,Time from prediction landmark to hospital exit was summarized descriptively; no model was refitted
+Machine-readable results,"Machine-readable copies of Tables S1-S19, full-precision transformations and primary-model coefficients, external calibration-intercept estimates, and aggregate hospital-influence summaries accompany this appendix"
+Privacy,Only aggregate outputs are reported; patient-level rows and protected hospital identifiers are not included

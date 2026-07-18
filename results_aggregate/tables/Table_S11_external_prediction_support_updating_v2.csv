@@ -1,0 +1,11 @@
+model,update,intercept,slope,Brier,log loss
+M0,Intercept only,0.133,1,0.1855,0.5534
+M0,Intercept and slope,-0.05,0.804,0.1849,0.5509
+M_MP,Intercept only,0.182,1,0.1831,0.5477
+M_MP,Intercept and slope,-0.003,0.811,0.1824,0.5453
+M_4DPRR,Intercept only,0.077,1,0.1818,0.5461
+M_4DPRR,Intercept and slope,-0.098,0.798,0.1813,0.5431
+M_DPRR,Intercept only,0.279,1,0.183,0.5464
+M_DPRR,Intercept and slope,0.006,0.744,0.181,0.5408
+M_ENERGY,Intercept only,0.165,1,0.1828,0.5473
+M_ENERGY,Intercept and slope,-0.03,0.797,0.182,0.5444

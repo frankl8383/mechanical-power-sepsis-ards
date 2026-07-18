@@ -1,0 +1,13 @@
+section,database,item,n,events,preferred tidal-volume source,paired set and total rates,concordant rates,Brier score,Log loss,C-statistic
+Measurement support,MIMIC-IV,Valid plateau-anchored tuples,10468,,97.6%,94.7%,80.1%,,,
+Measurement support,eICU-CRD,Valid plateau-anchored tuples,1459,,88.2%,95.3%,67.6%,,,
+Mode-restricted flow,MIMIC-IV,Tuple-positive set,10468,,,,,,,
+Mode-restricted flow,MIMIC-IV,Ventilator mode recorded,10185,,,,,,,
+Mode-restricted flow,MIMIC-IV,Formula-compatible mode,628,,,,,,,
+Mode-restricted flow,MIMIC-IV,Compatible mode and concordant rates,474,,,,,,,
+Mode-restricted flow,MIMIC-IV,Complete restricted analysis set,446,103,,,,,,
+Restricted performance,MIMIC-IV,M0,446,103,,,,0.1574,0.4843,0.721
+Restricted performance,MIMIC-IV,M_MP,446,103,,,,0.1573,0.4839,0.722
+Restricted performance,MIMIC-IV,M_4DPRR,446,103,,,,0.157,0.4835,0.721
+Restricted performance,MIMIC-IV,M_DPRR,446,103,,,,0.1543,0.474,0.748
+Restricted performance,MIMIC-IV,M_ENERGY,446,103,,,,0.1569,0.4825,0.725

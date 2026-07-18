@@ -1,0 +1,6 @@
+"model_id","added_terms","incremental_df","role"
+"M0","",0,"severity baseline"
+"M_MP","smp",1,"formula-based surrogate mechanical power"
+"M_4DPRR","four_dprr",1,"one-df pressure-rate composite"
+"M_DPRR","driving_pressure + rr",2,"free pressure-rate weights"
+"M_ENERGY","static_power + dynamic_power + resistive_power",3,"free static-elastic/dynamic-elastic/resistive algebraic-term weights"

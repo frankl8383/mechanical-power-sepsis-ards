@@ -1,0 +1,15 @@
+database,domain,common definition,database-specific implementation
+Both,Target phenotype,Oxygenation-defined acute hypoxemic respiratory failure; not imaging-adjudicated ARDS,No infection requirement in the primary cohort
+Both,Age,Age at least 18 years,First qualifying adult stay or encounter per person
+Both,Oxygenation and PEEP,PaO2/FIO2 at most 300 mm Hg with PEEP at least 5 cm H2O,PaO2-to-FIO2 and PaO2-to-PEEP pairing windows were 120 minutes
+MIMIC-IV,Index selection,"Earliest respiratory-eligible event per ICU stay, then first qualifying stay per subject",Development and internal-validation database
+MIMIC-IV,Invasive ventilation and NIV exclusion,Active invasive-ventilation procedure at index (item 225792) or latest invasive mode/endotracheal-tube record in the preceding 14 hours,Excluded NIV procedure intervals (item 225794) overlapping index ±120 minutes and NIV mode or mask records within ±120 minutes
+eICU-CRD,Index selection,"Earliest respiratory-eligible event per unit stay, then deterministic first qualifying encounter per person",External-evaluation database; models applied without refitting
+eICU-CRD,Invasive ventilation and NIV exclusion,Artificial-airway documentation within a 720-minute lookback/120-minute documentation grace period or explicit invasive mode within ±120 minutes,Excluded explicit NIV labels in respiratory charting within ±120 minutes of index
+Both,Fixed prediction landmark,Index plus 6 hours,All predictors and the selected tuple had to be available no later than the landmark
+Both,Early death,In-hospital death on or before index plus 6 hours,Excluded before forming the landmark risk set
+Both,Early live discharge,Alive hospital discharge on or before index plus 6 hours,Excluded before forming the landmark risk set
+Both,Unknown early exit,Hospital end or status insufficient to establish presence and vital status at the landmark,Reported separately and excluded from the landmark risk set
+Both,Outcome,In-hospital mortality strictly after the 6-hour landmark,Outcome status was not used to define the cohort or select predictor measurements
+MIMIC-IV,Source-specific infection description,Culture-antibiotic criteria within 48 hours before index,"6,554 of 9,861 primary-analysis patients (66.5%)"
+eICU-CRD,Source-specific infection description,Diagnosis-supported criteria within 48 hours before index,"611 of 1,211 primary-analysis patients (50.5%)"

@@ -1,0 +1,3 @@
+"test_id","restricted_model","unrestricted_model","chi_square","df","p_value"
+"four_dprr_weight_constraint","M_4DPRR","M_DPRR",295.088017716878,1,3.87218330777279e-66
+"equal_algebraic_term_weight_constraint","M_MP","M_ENERGY",23.4795679755971,2,7.97033536364349e-06

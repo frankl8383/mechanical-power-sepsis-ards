@@ -1,0 +1,11 @@
+representation,formula,unit,interpretation boundary
+Driving pressure,Pplat − PEEP,cm H2O,Airway-pressure difference; not transpulmonary pressure
+Resistive pressure,Ppeak − Pplat,cm H2O,Airway-pressure difference; depends on measurement conditions
+Surrogate mechanical power (sMP),0.098 × RR × VT(L) × [Ppeak − 0.5 × (Pplat − PEEP)],J/min,Plateau-based airway-pressure surrogate; not directly measured ventilator or tissue energy
+4 × ΔP + RR,4 × driving pressure + RR,Composite score,One-degree-of-freedom pressure-rate index; not an energy quantity
+Static-elastic algebraic term,0.098 × RR × VT(L) × PEEP,J/min,Exact formula component; not independently measured energy
+Dynamic-elastic algebraic term,0.098 × RR × VT(L) × 0.5 × driving pressure,J/min,Exact formula component; not independently measured energy
+Resistive algebraic term,0.098 × RR × VT(L) × resistive pressure,J/min,Exact formula component; not independently measured dissipated energy
+Exact identity,sMP = static-elastic term + dynamic-elastic term + resistive term,J/min,Algebraic equality under the specified surrogate equation
+Static compliance,VT(L) / driving pressure,L/cm H2O,Defined only for positive driving pressure
+Compliance-normalized sMP,sMP / [VT(L) / driving pressure],J × cm H2O / (min × L),Defined for positive driving pressure; not a replacement primary exposure
