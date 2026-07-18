@@ -1,7 +1,0 @@
-cohort,model,N,events,C,MP_OR_perSD,MP_p
-MIMIC (28-day),Base (age+sex+PF+nonresp-SOFA+dP),17573,3381,0.7324,,
-MIMIC (28-day),+ Row-level MP (per-timepoint),17573,3381,0.7427,1.351,7.7e-44
-MIMIC (28-day),+ Component-median MP (main),17573,3381,0.7391,1.28,4.28e-31
-eICU (in-hosp),Base (age+sex+PF+nonresp-SOFA+dP),1745,575,0.7202,,
-eICU (in-hosp),+ Row-level MP (per-timepoint),1745,575,0.7219,1.166,0.0145
-eICU (in-hosp),+ Component-median MP (main),1745,575,0.7215,1.201,0.00278

@@ -1,0 +1,7 @@
+database,target,cohort support,supported hospitals,inclusion C,truncated weight range,ESS,max weighted absolute SMD,outcome weighting
+MIMIC-IV,Valid measurement set by 6 h (availability model),"20,388 supported at risk; 10,468 included; 20,388 in the full risk set",1,0.662,0.578 to 1.734,9816.54,0.01,Yes
+MIMIC-IV,Valid measurements and complete baseline (diagnostic model including all candidate variables),"20,388 supported at risk; 9,861 included; 20,388 in the full risk set",1,0.697,0.546 to 1.644,9244.96,0.014,No
+MIMIC-IV,Valid measurements and complete baseline (weighting model restricted to variables observed throughout the risk set),"20,388 supported at risk; 9,861 included; 20,388 in the full risk set",1,0.617,0.6 to 1.332,9522.83,0.008,Yes
+eICU-CRD,Valid measurement set by 6 h (availability model),"3,748 supported at risk; 1,459 included; 5,509 in the full risk set",36,0.613,0.648 to 2.02,1365.88,0.016,Yes
+eICU-CRD,Valid measurements and complete baseline (diagnostic model including all candidate variables),"3,679 supported at risk; 1,211 included; 5,509 in the full risk set",34,0.73,0.542 to 1.152,1175.75,0.092,No
+eICU-CRD,Valid measurements and complete baseline (weighting model restricted to variables observed throughout the risk set),"3,679 supported at risk; 1,211 included; 5,509 in the full risk set",34,0.609,0.579 to 1.556,1143.59,0.009,Yes

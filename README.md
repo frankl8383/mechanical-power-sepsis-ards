@@ -1,88 +1,111 @@
-# Day-1 mechanical power in sepsis-associated ARDS — analysis code
+# Surrogate mechanical power and pressure-rate models in acute hypoxemic respiratory failure
 
-Analysis code and **aggregate** results for the study:
+This repository contains the analysis code and disclosure-safe aggregate
+results for a fixed-landmark comparison of surrogate mechanical power (sMP)
+with simpler pressure-rate representations in adults with
+oxygenation-defined acute hypoxemic respiratory failure.
 
-> *Day-1 mechanical power as an incremental, transportable prognostic signal
-> beyond illness severity in ventilated sepsis-associated ARDS: development and
-> external validation across two intensive care databases.*
+The primary analysis uses MIMIC-IV 3.1 for development and internal validation
+and eICU-CRD 2.0 for unchanged external application. The prediction time is
+fixed at 6 hours after the respiratory index. All five models use the same
+patients, clinical baseline, outcome, and validation procedure.
 
-The study asks whether day-1 mechanical power carries prognostic information
-**incremental to** established illness-severity scores (non-respiratory SOFA;
-APACHE IVa), and whether that increment **transports** from a development
-database (MIMIC-IV) to an independent multi-center database (eICU-CRD). The
-cohort is an **oxygenation-defined, ventilated ARDS phenotype**, not
-imaging-adjudicated Berlin ARDS.
+## Scientific scope
 
-## ⚠️ Data availability and PhysioNet Data Use Agreement
+The study compares:
 
-This repository contains **analysis code and aggregate outputs only**. It contains
-**no row-level (individual patient) data**.
+- a clinical baseline model;
+- the clinical baseline plus sMP;
+- the clinical baseline plus `4 × driving pressure + respiratory rate`;
+- the clinical baseline plus separately estimated driving pressure and
+  respiratory rate;
+- the clinical baseline plus the three exact algebraic terms of the sMP
+  equation.
 
-The two databases analysed —
-[MIMIC-IV v3.1](https://physionet.org/content/mimiciv/3.1/) and the
-[eICU Collaborative Research Database v2.0](https://physionet.org/content/eicu-crd/2.0/) —
-are distributed by PhysioNet under a Data Use Agreement to **credentialed** users
-who have completed the required human-subjects research (CITI) training. Under that
-agreement, individual-level data **may not be redistributed**. To reproduce the
-analysis you must obtain the databases directly from PhysioNet under your own
-credentialed access.
+The exposure is an airway-pressure surrogate. The databases do not establish
+passive ventilation, constant inspiratory flow, a valid inspiratory hold,
+transpulmonary energy, or imaging-adjudicated ARDS. The analysis is prognostic
+and does not estimate the causal effect of changing ventilator settings.
 
-## Repository structure
+## Repository contents
 
-| Path | Contents |
-|------|----------|
-| `R/` | Analysis scripts (external validation, SOFA construction, incremental-value models, and the supplementary robustness analyses below). |
-| `results_aggregate/` | Aggregate result objects and result tables (no patient-level rows). |
-| `results_aggregate/tables/` | Machine-readable versions of the manuscript tables, cross-center results, and the supplementary-analysis outputs. |
-| `qc_reports/` | Quality-control reports for each analysis stage. |
+- `code/R/rebuild_v2/`: current fixed-landmark cohort, modeling, validation,
+  selection, construct-quality, and missing-data analyses.
+- `code/R/rebuild_v1/`: audited source-mapping code reused by the current
+  pipeline.
+- `docs/rebuild_v2/`: statistical analysis plan and decision log for the
+  current analysis.
+- `docs/rebuild_v1/`: source-mapping provenance and earlier analysis
+  decisions required by reused code.
+- `results_aggregate/tables/`: machine-readable Supplementary Tables S1-S19.
+- `results_aggregate/full_precision/`: full-precision model parameters and
+  disclosure-safe performance summaries.
+- `results_aggregate/SHA256_MANIFEST.csv`: checksums for the public aggregate
+  files.
 
-### Analysis scripts (`R/`)
+No patient-level records, protected hospital identifiers, credentialed source
+files, or bootstrap-replicate records are included.
 
-| Script | Analysis |
-|--------|----------|
-| `08_eicu_external_validation_v1_0.R` | External validation of the frozen model in eICU-CRD (discrimination, calibration, robustness). |
-| `09_pertimepoint_mp_and_bodysize.R` | **Supplementary Analysis A** — per-timepoint vs component-median mechanical-power agreement (Bland-Altman); body-size (VT/PBW) normalization; sex-stratified MP association. |
-| `10_selection_bias.R` | **Supplementary Analysis B** — complete-case selection: standardized mean differences, inverse-probability-of-selection weighting, and a missing-not-at-random (MNAR) tipping-point. |
-| `11_decision_curve_endpoint_bridge.R` | **Supplementary Analysis C** — decision-curve / net-benefit analysis; endpoint bridge (frozen model applied to 28-day and in-hospital mortality within MIMIC-IV). |
+## Data access
 
-The simplified volume-controlled mechanical-power equation used throughout is
-`MP = 0.098 · RR · (VT/1000) · (Ppeak − 0.5·ΔP)`, with `ΔP = Pplat − PEEP`
-(Chiumello et al., *Crit Care* 2020; PMID 32653011). The first pressure term is
-**peak** inspiratory pressure, not plateau.
+MIMIC-IV and eICU-CRD are available to credentialed users through
+[PhysioNet](https://physionet.org/) under their respective data-use
+agreements. This repository does not redistribute either database.
 
-### Result tables (`results_aggregate/tables/`)
+Set the following environment variables before running the code:
 
-Primary/validation tables (`table1_baseline`, `table2_primary_model`,
-`table3a_internal_robustness`, `table3b_external_validation`,
-`table_sofa_incremental`, `table_external_increment`) and the multi-center
-transportability tables (`center_strata_counts`, `region_transport`, `loro_cv`,
-`size_teaching_transport`, `eicu_mi_sensitivity`, `eicu_citl_decomp`).
+```bash
+export ARDS_MP_PROJECT_ROOT="/path/to/this/repository"
+export MIMIC_IV_DIR="/path/to/mimiciv/3.1"
+export EICU_CRD_DIR="/path/to/eicu-crd/2.0"
+```
 
-Supplementary-analysis outputs (this revision):
-`mp_aggregation_agreement`, `mp_rowlevel_increment`, `mp_pbw_normalization`,
-`mp_sex_stratified` (Analysis A); `completecase_vs_incomplete_baseline`,
-`ipw_sensitivity`, `mnar_tipping` (Analysis B); `decision_curve`,
-`endpoint_bridge` (Analysis C).
+`ARDS_MP_PROJECT_ROOT` defaults to the current working directory. The two data
+directories are required and have no embedded local default.
 
-## Software environment
+## Software
 
-- R 4.5.3
-- data.table 1.17.8, survival 3.8.6, rms 8.1.1, pROC 1.19.0.1, mice 3.19.0
+The completed analysis used R 4.5.1 with data.table 1.17.4, splines 4.5.1,
+and survival 3.8.3. Some secondary analyses also require `digest`, `lme4`,
+`metafor`, and `mice`. Python 3 is used only for streaming source filters.
 
-## Reproducing the analysis
+## Execution
 
-1. Obtain MIMIC-IV v3.1 and eICU-CRD v2.0 from PhysioNet (credentialed access).
-2. Point the data-path variables at the top of the scripts in `R/` to your local
-   copies of the databases.
-3. Run the scripts in order; aggregate outputs are written to a local results
-   directory.
+The current pipeline is documented in
+[`code/R/rebuild_v2/README.md`](code/R/rebuild_v2/README.md). The principal
+stages are:
 
-## Citation
+```bash
+Rscript code/R/rebuild_v2/run_phase1_v2.R
+Rscript code/R/rebuild_v2/02b_outcome_free_representation_audit.R
+Rscript code/R/rebuild_v2/07_build_selection_weights.R
+Rscript code/R/rebuild_v2/10_freeze_primary_model_frames.R
+Rscript code/R/rebuild_v2/11_run_primary_models.R
+Rscript code/R/rebuild_v2/12_build_primary_descriptives.R
+```
 
-If you use this code, please cite the manuscript (details to be added on
-publication) and the two source databases (Johnson et al., MIMIC-IV; Pollard
-et al., eICU-CRD).
+Internal calibration-slope uncertainty is generated separately for each model,
+as described in the pipeline README. The analysis also contains prespecified
+secondary and sensitivity stages; they should not be substituted for the
+primary sequence.
+
+The public release makes local filesystem configuration portable and removes
+internal administrative records that are unrelated to reproducibility. It
+does not alter the cohort definitions, formulas, model specifications, seeds,
+or reported estimates used for the manuscript.
+
+## Verify aggregate results
+
+From the repository root:
+
+```bash
+python3 scripts/verify_aggregate_manifest.py
+```
+
+The verifier checks the byte size and SHA-256 hash of every file listed in
+`results_aggregate/SHA256_MANIFEST.csv`.
 
 ## License
 
-Code is released under the MIT License (see `LICENSE`).
+Code is released under the MIT License. MIMIC-IV and eICU-CRD remain subject to
+their own access terms.

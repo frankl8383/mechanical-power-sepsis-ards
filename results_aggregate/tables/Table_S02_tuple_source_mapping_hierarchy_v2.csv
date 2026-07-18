@@ -1,0 +1,15 @@
+database,component,prioritized source labels,analytic role,valid range
+MIMIC-IV,Plateau pressure,1. 224696: Plateau Pressure,Tuple anchor,5 to 60
+MIMIC-IV,Peak inspiratory pressure,1. 224695: Peak Insp. Pressure,Explicitly recorded value,5 to 80
+MIMIC-IV,PEEP,1. 220339: PEEP set; 2. 224700: Total PEEP Level,Preferred recorded value,5 to 30
+MIMIC-IV,Tidal volume,1. 224685: Tidal Volume (observed); 2. 224684: Tidal Volume (set),Observed or exhaled value preferred,100 to 1500
+MIMIC-IV,Respiratory rate,1. 224690: Respiratory Rate (Total); 2. 220210: Respiratory Rate; 3. 224688: Respiratory Rate (Set),Total respiratory rate preferred,5 to 60
+eICU-CRD,Plateau pressure,1. Plateau Pressure,Tuple anchor,5 to 60 cm H2O
+eICU-CRD,Peak inspiratory pressure,1. Peak Insp. Pressure,Explicitly recorded value,5 to 80 cm H2O
+eICU-CRD,PEEP,1. PEEP; 2. PEEP/CPAP,Preferred recorded value,5 to 30 cm H2O
+eICU-CRD,Tidal volume,1. Tidal Volume Observed (VT); 1. Exhaled TV (patient); 1. Exhaled TV (machine); 2. Tidal Volume (set),Observed or exhaled value preferred,100 to 1500 mL
+eICU-CRD,Respiratory rate,1. Total RR; 2. Vent Rate,Total respiratory rate preferred,5 to 60 per min
+Both,Anchor,Plateau pressure,Tuple anchor,See source-specific rows
+Both,Pairing window,All non-anchor components,Primary matching window,plus or minus 60 minutes
+MIMIC-IV,Availability,Chart and store times,Availability cutoff,No later than index plus 6 hours
+eICU-CRD,Availability,Documented chart offset,Availability cutoff,No later than index plus 6 hours or observable ICU end

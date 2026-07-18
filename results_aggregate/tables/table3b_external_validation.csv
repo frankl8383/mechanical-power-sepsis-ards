@@ -1,7 +1,0 @@
-Metric,MIMIC-IV (internal),eICU-CRD (external)
-Cohort / outcome,"Development, 28-day mortality","Validation, in-hospital mortality"
-N (events),"19,394 (4,032)","1,837 (610)"
-Discrimination C (95% CI),0.664 (optimism-corrected),0.656 (0.630–0.683)
-Calibration-in-the-large,0 (by design),0.539
-Calibration slope,0.997,0.865
-Brier score (raw → recalibrated),0.154,0.216 → 0.206

@@ -1,0 +1,3 @@
+"database","broad_index_n","source_specific_infection_index_n","primary_common_set_n","same_stay_or_encounter_overlap_n","source_specific_definition","harmonized_external_validation_permitted","outcome_model_run","same_stay_or_encounter_overlap_fraction"
+"MIMIC-IV",20765,13046,9861,6554,"antibiotic/culture suspected infection; index-48 h to index",FALSE,FALSE,0.664638474799716
+"eICU-CRD",5624,2082,1211,611,"diagnosis/admissionDx-supported infection; index-48 h to index",FALSE,FALSE,0.504541701073493

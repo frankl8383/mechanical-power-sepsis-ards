@@ -1,0 +1,8 @@
+analysis,comparison,sample,Delta Brier,Delta log loss,Delta C statistic
+Functional-form sensitivity,Flexible 4 × ΔP + RR versus Flexible sMP,"eICU-CRD: 1,211 patients; 348 deaths; 34 hospitals",-0.00215,-0.00428,0.00811
+Functional-form sensitivity,Separate ΔP and RR (flexible) versus Flexible sMP,"eICU-CRD: 1,211 patients; 348 deaths; 34 hospitals",-0.00025,0.00033,0.00996
+Functional-form sensitivity,Algebraic terms (linear) versus Flexible sMP,"eICU-CRD: 1,211 patients; 348 deaths; 34 hospitals",-0.00079,-0.00181,0.00362
+Compliance-normalized sMP,Compliance-normalized sMP versus sMP,"eICU-CRD: 1,211 patients; 348 deaths; 34 hospitals",-0.00158,-0.00273,0.00642
+Rate-concordant preferred sources,4 × ΔP + RR versus sMP,eICU-CRD: 749 patients; 200 deaths; 26 hospitals,-0.00266,-0.00767,0.00895
+Rate-concordant preferred sources,Separate ΔP and RR versus sMP,eICU-CRD: 749 patients; 200 deaths; 26 hospitals,0.00055,-0.000055,0.01268
+Rate-concordant preferred sources,Algebraic terms versus sMP,eICU-CRD: 749 patients; 200 deaths; 26 hospitals,-0.00023,-0.00109,0.00265
