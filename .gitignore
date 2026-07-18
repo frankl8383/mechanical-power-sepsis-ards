@@ -5,13 +5,11 @@
 *.Rproj
 __pycache__/
 *.py[cod]
-
-# Credentialed source data and patient-level derived data
 data/
 raw/
 private/
-analysis_rebuild_v1/private/
-analysis_rebuild_v2/private/
+analysis_rebuild_v1/
+analysis_rebuild_v2/
 *.rds
 *.RDS
 *.rda
@@ -19,19 +17,9 @@ analysis_rebuild_v2/private/
 *.csv.gz
 *.parquet
 *.feather
-
-# Local execution products
-analysis_rebuild_v1/logs/
-analysis_rebuild_v2/logs/
-analysis_rebuild_v1/qc/
-analysis_rebuild_v2/qc/
-analysis_rebuild_v1/aggregate/
-analysis_rebuild_v2/aggregate/
 checkpoints/
 *.log
 *.tmp
-
-# Manuscript and internal review materials
 submission/
 manuscript_rebuild_v2/
 QA_AND_AUTHOR_ACTIONS/

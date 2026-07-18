@@ -1,3 +1,0 @@
-# Machine-readable supplementary data
-
-This archive contains machine-readable copies of Supplementary Tables S1-S19, full-precision primary-model transformations and coefficients, external calibration-intercept estimates, and aggregate hospital-influence summaries. It contains no patient-level records, hospital identifiers, hospital-specific rows, bootstrap-replicate records, or internal intermediate files. Model identifiers are M0 (clinical baseline), M_MP (sMP), M_4DPRR (fixed pressure-rate index), M_DPRR (separate driving pressure and respiratory rate), and M_ENERGY (algebraic terms). The display tables remain the reader-facing version of record; these CSV files support numerical reuse and audit.
